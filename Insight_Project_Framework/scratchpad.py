@@ -1,4 +1,4 @@
-"""
+"
 This scratchpad usess Streamlit which should be installed on your machine if
 you follow the Insight Installation Instructions:
 
