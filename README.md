@@ -1,23 +1,60 @@
 # Insight_Project_Framework
-Framework for machine learning projects at Insight Data Science. 
+Framework for machine learning projects at Insight Data Science.
 
 ## Motivation for this project format:
-- **src** : Put all source code for production within structured directory
+- **Insight_Project_Framework** : Put all source code for production within structured directory
 - **tests** : Put all source code for testing in an easy to find location
 - **configs** : Enable modification of all preset variables within single directory (consisting of one or many config files for separate tasks)
 - **data** : Include example a small amount of data in the Github repository so tests can be run to validate installation
 - **build** : Include scripts that automate building of a standalone environment
 - **static** : Any images or content to include in the README or web framework if part of the pipeline
 
+## Setup
+Clone repository and update python path
+```
+repo_name=Insight_Project_Framework # URL of your new repository
+username=mrubash1 # Username for your personal github account
+git clone https://github.com/$username/$repo_name
+cd $repo_name
+echo "export $repo_name=${PWD}" >> ~/.bash_profile
+echo "export PYTHONPATH=$repo_name/src:${PYTHONPATH}" >> ~/.bash_profile
+source ~/.bash_profile
+```
+Create new development branch and switch onto it
+```
+branch_name=dev-readme_requisites-20180905 # Name of development branch, of the form 'dev-feature_name-date_of_creation'}}
+git checkout -b $branch_name
+```
+
+## Initial Commit
+Lets start with a blank slate: remove `.git` and re initialize the repo
+```
+cd $repo_name
+rm -rf .git   
+git init   
+git status
+```  
+You'll see a list of file, these are files that git doesn't recognize. At this point, feel free to change the directory names to match your project. i.e. change the parent directory Insight_Project_Framework and the project directory Insight_Project_Framework:
+Now commit these:
+```
+git add .
+git commit -m "Initial commit"
+git push origin $branch_name
+```
 
 ## Requisites
+
 - List all packages and software needed to build the environment
 - This could include cloud command line tools (i.e. gsutil), package managers (i.e. conda), etc.
-```
-# Example
-- A
-- B
-- C
+
+#### Dependencies
+
+- [Streamlit](streamlit.io)
+
+#### Installation
+To install the package above, pleae run:
+```shell
+pip install -r requiremnts
 ```
 
 ## Build Environment
@@ -69,7 +106,7 @@ Framework for machine learning projects at Insight Data Science.
 ```
 
 ## Serve Model
-- Include instructions of how to set up a REST or RPC endpoint 
+- Include instructions of how to set up a REST or RPC endpoint
 - This is for running remote inference via a custom model
 ```
 # Example
